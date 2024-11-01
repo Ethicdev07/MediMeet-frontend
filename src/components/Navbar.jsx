@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import {assets} from '../assets/assets'
 import { NavLink, useNavigate } from 'react-router-dom'
@@ -6,12 +7,12 @@ import { useState } from 'react';
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const [showMenu, setShowMenu] = useState(false);
+  // const [showMenu, setShowMenu] = useState(false);
   const [token, setToken] = useState(true)
   return (
     <div className='flex items-center justify-between text-sm py-4 mb-5 border-b border-b-400'>
       <div className='w-[100px] cursor-pointer flex items-center text-3xl'>
-        <img src={assets.medimeetlogo} alt="" />
+        <img onClick={()=> {navigate('/')}} src={assets.medimeetlogo} alt="" />
         <p className='font-bold text-primary'>MediMeet</p>
       </div>
       <ul className='hidden md:flex items-start gap-5 font-medium'>

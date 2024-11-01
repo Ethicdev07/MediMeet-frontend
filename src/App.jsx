@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
@@ -9,6 +10,7 @@ import MyProfile from './pages/MyProfile'
 import MyAppointment from './pages/MyAppointment'
 import Appointment from './pages/Appointment'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -16,7 +18,7 @@ const App = () => {
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/doctors/:speciality' element={<Doctors/>} />
+        <Route path='/doctors/:speciality?' element={<Doctors/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<Contact/>} />
@@ -24,6 +26,8 @@ const App = () => {
         <Route path='/my-appointment' element={<MyAppointment/>} />
         <Route path='/appoinment/:docId' element={<Appointment/>} />
       </Routes>
+
+      <Footer/>
     </div>
   )
 }
