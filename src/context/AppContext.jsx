@@ -4,14 +4,18 @@ import { doctors } from "../assets/assets";
 // eslint-disable-next-line react-refresh/only-export-components
 export const AppContext = createContext();
 
-// eslint-disable-next-line react/prop-types
-const AppContextProvider = ({ children }) => {
+
+const AppContextProvider = (props) => {
+
+  const currencySymbol = '$'
+
   const value = {
-    doctors,
+    doctors, currencySymbol
   };
 
   return (
-    <AppContext.Provider value={value}>{children}</AppContext.Provider>
+    // eslint-disable-next-line react/prop-types
+    <AppContext.Provider value={value}>{props.children}</AppContext.Provider>
   );
 };
 
